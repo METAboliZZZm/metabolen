@@ -1,1 +1,14 @@
-
+C: \Users\gacsa>copy con filel.txt
+Валентина Хипповна
+Леонив Боболов
+Саша Роуз
+Клео Беспечный
+Клумс Санников
+Рита Брумс
+Катя Кедр
+~Z
+Скопировано файлов:
+1.
+C: \Users\gacsa>sort < filel.txt >
+Ошибка в синтаксисе команды.
+C: \Users\gacsa>sort < filel.txt › sorted_filel.tx
