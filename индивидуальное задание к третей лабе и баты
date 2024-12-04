@@ -1,0 +1,96 @@
+Microsoft Windows [Version 10.0.22631.4460]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\gacsa\Downloads>lab3.IZ1.punkt1.bat integers.txt
+Error: file integers.txt not found
+
+C:\Users\gacsa\Downloads>lab3.IZ1.punkt1.bat chisla.txt
+amount of integers: 5
+
+
+C:\Users\gacsa\Downloads>list_god2.bat "C:\Users\gacsa\Downloads" 2024
+C:\Users\gacsa\Downloads\03 (1).xlsx
+C:\Users\gacsa\Downloads\03 (2).xlsx
+C:\Users\gacsa\Downloads\03 (3).xlsx
+C:\Users\gacsa\Downloads\03 (4).xlsx
+C:\Users\gacsa\Downloads\03.xlsx
+C:\Users\gacsa\Downloads\03_4691.xlsx
+C:\Users\gacsa\Downloads\09 (1).xlsx
+C:\Users\gacsa\Downloads\09.xlsx
+C:\Users\gacsa\Downloads\10 (1).docx
+C:\Users\gacsa\Downloads\107_18 (1).xlsx
+C:\Users\gacsa\Downloads\107_18 (2).xlsx
+C:\Users\gacsa\Downloads\107_18 (3).xlsx
+C:\Users\gacsa\Downloads\107_18.xlsx
+C:\Users\gacsa\Downloads\10_2024.docx
+C:\Users\gacsa\Downloads\10_4698.docx
+C:\Users\gacsa\Downloads\10_demo.docx
+C:\Users\gacsa\Downloads\111973_SP685-color_silver_LE_auto_x2 (1).jpg
+C:\Users\gacsa\Downloads\111973_SP685-color_silver_LE_auto_x2 (2).jpg
+C:\Users\gacsa\Downloads\111973_SP685-color_silver_LE_auto_x2.jpg
+C:\Users\gacsa\Downloads\1351984.pptx
+C:\Users\gacsa\Downloads\17.txt
+C:\Users\gacsa\Downloads\18 (1).xlsx
+C:\Users\gacsa\Downloads\18 (2).xlsx
+C:\Users\gacsa\Downloads\18 (3).xlsx
+C:\Users\gacsa\Downloads\18 (4).xlsx
+C:\Users\gacsa\Downloads\18 (5).xlsx
+C:\Users\gacsa\Downloads\18 (6).xlsx
+C:\Users\gacsa\Downloads\18 (7).xlsx
+C:\Users\gacsa\Downloads\18 (8).xlsx
+C:\Users\gacsa\Downloads\18.xlsx
+C:\Users\gacsa\Downloads\18_59787.xlsx
+C:\Users\gacsa\Downloads\18_demo (1).xlsx
+C:\Users\gacsa\Downloads\18_demo.xlsx
+C:\Users\gacsa\Downloads\22.xlsx
+C:\Users\gacsa\Downloads\22_12.xlsx
+C:\Users\gacsa\Downloads\22_2024.xlsx
+C:\Users\gacsa\Downloads\22_32.xlsx
+C:\Users\gacsa\Downloads\22_5.xlsx
+C:\Users\gacsa\Downloads\2619566-cars-3-4k-screen-wallpaper-free.jpg
+C:\Users\gacsa\Downloads\3 (1).xlsx
+C:\Users\gacsa\Downloads\3 (2).xlsx
+C:\Users\gacsa\Downloads\3 (3).xlsx
+C:\Users\gacsa\Downloads\3 (4).xlsx
+C:\Users\gacsa\Downloads\3 (5).xlsx
+C:\Users\gacsa\Downloads\3.xls
+C:\Users\gacsa\Downloads\3d-isometric.zip
+C:\Users\gacsa\Downloads\3_2024 (1).xlsx
+C:\Users\gacsa\Downloads\3_2024.xlsx
+C:\Users\gacsa\Downloads\546.33-desktop-win10-win11-64bit-international-dch-whql.exe
+C:\Users\gacsa\Downloads\9_58321.xlsx
+C:\Users\gacsa\Downloads\ace9b5ec87fbe1ea861401575478ae539e6857aecdf179ab59bca4581dc0fdf507e18a77e6ac7074cc45925e6ca6ac219e9a51f457d901f8f03ddf0205856c16.jpg
+C:\Users\gacsa\Downloads\Adobe Illustrator 2023 27.3.1 629 x64 [2023, Multi + RUS] [rutracker-6340396].torrent
+
+файл и бат первый пункт:
+chisla.txt
+56
+12
+76
+87
+12
+12.5
+
+бат второй пункт
+@ECHO OFF
+SETLOCAL ENABLEDELAYEDEXPANSION
+
+IF NOT EXIST %1 (
+    ECHO Ошибка: Catalog %1 not found!
+    GOTO :EOF
+)
+
+SET target_year=%2
+
+FOR %%F IN (%1\*) DO (
+    FOR /F "tokens=1-3 delims=. " %%A IN ("%%~tF") DO (
+        SET file_date=%%A.%%B.%%C
+        IF %%C==%target_year% (
+            IF %%B LSS 7 (
+                ECHO %%F
+            )
+        )
+    )
+)
+
+ENDLOCAL
