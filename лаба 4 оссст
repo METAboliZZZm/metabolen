@@ -1,0 +1,11 @@
+Задание Бригады 10
+3) PS C:\Users\gacsa> Get-ChildItem -Path C:\Windows -Recurse -Include *.jpg -ErrorAction SilentlyContinue | Sort-Object Name | Out-File -FilePath C:\Users\gacsa\directory_listing.txt
+4) PS C:\Users\gacsa> Get-Process | Get-Member -MemberType Property | Out-File -FilePath C:\Users\gacsa\process_properties.txt
+PS C:\Users\gacsa> (Get-Process | Get-Member -MemberType Property).Count
+52
+5) PS C:\Users\gacsa> Get-Process | Where-Object {$_.CPU -gt 5} | Sort-Object Id | Select-Object Id, Name, WorkingSet, CPU | Out-File -FilePath C:\Users\gacsa\process_list.txt
+6) PS C:\Users\gacsa> Get-Process | Sort-Object Id | Select-Object Id, Name, WorkingSet, CPU | ConvertTo-Html | Out-File -FilePath C:\Users\gacsa\processes.html
+7) PS C:\Users\gacsa> Get-ChildItem -Path C:\Windows -Recurse -Include *.bmp, *.jpg -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum | Out-File -FilePath C:\Users\gacsa\graphics_size.txt
+8) PS C:\Users\gacsa> Get-WmiObject -Class Win32_Processor | Format-List * | Out-File -FilePath C:\Users\gacsa\cpu_info.txt
+9) PS C:\Users\gacsa> Measure-Command {Get-ChildItem} | Out-File -FilePath C:\Users\gacsa\dir_time.txt
+PS C:\Users\gacsa> Measure-Command {Get-Process} | Out-File -FilePath C:\Users\gacsa\ps_time.txt
